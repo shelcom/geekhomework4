@@ -1,0 +1,20 @@
+p#notice = notice
+
+p
+  strong Title:
+  = @post.title
+
+p
+  strong Image:
+  = image_tag @post.avatar(:thumb)
+
+p
+  strong Content:
+  = @post.content
+p
+  strong User:
+  = @post.user.email
+
+=> link_to 'Edit', edit_post_path(@post)
+'|
+=< link_to 'Back', posts_path

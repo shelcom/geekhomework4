@@ -1,0 +1,23 @@
+h1 Listing posts
+
+- @posts.each do |post|
+  h1 = post.title
+  p = image_tag post.avatar(:thumb)
+  p = post.content
+  div
+    b Author:
+    = post.user.email   
+     
+
+table
+
+  tbody
+    - @posts.each do |post|
+      tr
+        td = link_to 'Show', post 
+        td = link_to 'Edit', edit_post_path(post)
+        td = link_to 'Destroy', post, data: { confirm: 'Are you sure?' }, method: :delete
+
+br
+
+= link_to 'New Post', new_post_path,class:'btn btn-default'
